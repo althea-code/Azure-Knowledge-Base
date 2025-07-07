@@ -1,0 +1,15 @@
+#below are instructions for adding a new server to Azure Arc
+#this example is using a linux server, but similar steps are used for windows servers
+
+1. Generate a Script in Azure
+  Go to Azure.Portal -> Azure Arc -> Add/Create -> Add a machine
+  Generate the desired Script
+
+2. Transfer Script
+  Transfer over SFTP. I like to use WINSCP
+
+3. Execute Script and authenticate
+  use >chmod +x yourscript.sh in Bash to make the file executable
+  execute script in Linux server with >./yourscript.sh
+  Script with likely ask you to login to azure and authenticate with provided authentication code
+  Once connection is authenticated, script will finish running, and once its finished, machine should be visible in Azure Arc
